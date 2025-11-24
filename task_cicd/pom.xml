@@ -21,7 +21,7 @@
 		<app.runtime>4.10.1</app.runtime>
  
 		<!-- Mule Maven plugin -->
-		<mule.maven.plugin.version>4.5.2</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.1.1</mule.maven.plugin.version>
  
 		<!-- CH2 deploy props -->
 		<deployment.env>Sandbox</deployment.env>
@@ -95,10 +95,9 @@
  
 						<server>Repository</server>
  
-						<!-- Connected App Auth -->
-						
-    <connectedAppClientId>${connectedApp.clientId}</connectedAppClientId>
-    <connectedAppClientSecret>${connectedApp.clientSecret}</connectedAppClientSecret>
+						<!-- Overridden from Jenkins with -Danypoint.username/password -->
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
 						<muleVersion>${app.runtime}</muleVersion>
 						<applicationName>${project.artifactId}</applicationName>
  
