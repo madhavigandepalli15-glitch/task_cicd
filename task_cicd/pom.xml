@@ -79,6 +79,7 @@
 						<target>${deployment.target}</target>
 						 <connectedAppClientId>${connectedApp.clientId}</connectedAppClientId>
     <connectedAppClientSecret>${connectedApp.clientSecret}</connectedAppClientSecret>
+ <grantType>client_credentials</grantType>
 
 						<muleVersion>${app.runtime}</muleVersion>
 						<applicationName>${project.artifactId}</applicationName>
