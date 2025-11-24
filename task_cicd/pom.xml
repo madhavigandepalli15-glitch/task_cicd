@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
 	<modelVersion>4.0.0</modelVersion>
+ 
 	<!-- Anypoint Org / Business Group ID -->
 	<groupId>f0005679-fd45-4b88-898d-080ad2da66c9</groupId>
-	<artifactId>task-cicd</artifactId>
+	<artifactId>task_cicd</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
-	<name>task-cicd</name>
+ 
+	<name>task_cicd</name>
+ 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+ 
 		<!-- Mule runtime (CloudHub 2.0 Free Trial – edge/java17) -->
 		<app.runtime>4.10.1</app.runtime>
+ 
 		<!-- Mule Maven plugin -->
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.1.1</mule.maven.plugin.version>
+ 
 		<!-- CH2 deploy props -->
 		<deployment.env>Sandbox</deployment.env>
 		<deployment.target>Cloudhub-US-East-2</deployment.target>
 	</properties>
+ 
 	<!-- Exchange Maven Facade repositories (for dependencies) -->
 	<repositories>
 		<repository>
@@ -36,6 +46,7 @@
 			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 	</repositories>
+ 
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-plugin-repo</id>
@@ -47,6 +58,7 @@
 			<url>https://repo.maven.apache.org/maven2</url>
 		</pluginRepository>
 	</pluginRepositories>
+ 
 	<!-- CRUCIAL: distributionManagement so "mvn deploy" publishes to Exchange -->
 	<distributionManagement>
 		<repository>
@@ -57,6 +69,7 @@
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
+ 
 	<build>
 		<plugins>
 			<plugin>
@@ -64,6 +77,7 @@
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
+ 
 			<!-- Mule CloudHub 2.0 Deployment -->
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
@@ -72,19 +86,24 @@
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
+ 
 					<cloudhub2Deployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<provider>MC</provider>
 						<environment>${deployment.env}</environment>
 						<target>${deployment.target}</target>
-						 <connectedAppClientId>${connectedApp.clientId}</connectedAppClientId>
-    <connectedAppClientSecret>${connectedApp.clientSecret}</connectedAppClientSecret>
  
-
+						<server>Repository</server>
+ 
+						<!-- Overridden from Jenkins with -Danypoint.username/password -->
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
 						<muleVersion>${app.runtime}</muleVersion>
 						<applicationName>${project.artifactId}</applicationName>
+ 
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
+ 
 						<deploymentSettings>
 							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
 						</deploymentSettings>
@@ -93,6 +112,7 @@
 			</plugin>
 		</plugins>
 	</build>
+ 
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
