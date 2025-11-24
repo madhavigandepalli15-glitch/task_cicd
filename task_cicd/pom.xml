@@ -95,9 +95,9 @@
  
 						<server>Repository</server>
  
-						<!-- Overridden from Jenkins with -Danypoint.username/password -->
-						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password>
+						<!-- Connected App Auth -->
+    <connectedAppClientId>${connectedApp.clientId}</connectedAppClientId>
+    <connectedAppClientSecret>${connectedApp.clientSecret}</connectedAppClientSecret>
 						<muleVersion>${app.runtime}</muleVersion>
 						<applicationName>${project.artifactId}</applicationName>
  
