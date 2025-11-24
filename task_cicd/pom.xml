@@ -13,7 +13,7 @@
 		<!-- Mule runtime (CloudHub 2.0 Free Trial – edge/java17) -->
 		<app.runtime>4.10.1</app.runtime>
 		<!-- Mule Maven plugin -->
-		<mule.maven.plugin.version>4.4.1</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.5.2</mule.maven.plugin.version>
 		<!-- CH2 deploy props -->
 		<deployment.env>Sandbox</deployment.env>
 		<deployment.target>Cloudhub-US-East-2</deployment.target>
