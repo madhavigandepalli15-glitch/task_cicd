@@ -96,7 +96,7 @@
 						<server>Repository</server>
  
 						<!-- Connected App Auth -->
-						<useConnectedApp>true</useConnectedApp>
+						
     <connectedAppClientId>${connectedApp.clientId}</connectedAppClientId>
     <connectedAppClientSecret>${connectedApp.clientSecret}</connectedAppClientSecret>
 						<muleVersion>${app.runtime}</muleVersion>
