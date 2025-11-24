@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<!-- Anypoint Org / Business Group ID -->
-	<groupId>0c4b9b4a-4a19-4ade-a03d-b1c28cb18fe5</groupId>
+	<groupId>f0005679-fd45-4b88-898d-080ad2da66c9</groupId>
 	<artifactId>task-cicd</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
@@ -24,7 +24,7 @@
 			<!-- 🔹 MUST match <server><id>anypoint-exchange-v3</id> in settings.xml -->
 			<id>anypoint-exchange-v3</id>
 			<name>Exchange2 Repository</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/0c4b9b4a-4a19-4ade-a03d-b1c28cb18fe5/maven</url>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/f0005679-fd45-4b88-898d-080ad2da66c9/maven</url>
 		</repository>
 		<repository>
 			<id>mulesoft-releases</id>
@@ -53,7 +53,7 @@
 			<!-- 🔹 MUST match <server><id>Repository</id> in settings.xml -->
 			<id>Repository</id>
 			<name>Exchange Repository</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/0c4b9b4a-4a19-4ade-a03d-b1c28cb18fe5/maven</url>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/f0005679-fd45-4b88-898d-080ad2da66c9/maven</url>
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
